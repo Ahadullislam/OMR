@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OMR Customization</title>
+    <style>
+        form { max-width: 500px; margin: 20px auto; padding: 20px; }
+        input, button { width: 100%; padding: 8px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Customize OMR Sheet</h1>
+    <form action="/customize" method="post">
+        <label>Number of Questions:</label>
+        <input type="number" name="num_questions" required>
+        
+        <label>Choices per Question:</label>
+        <input type="number" name="num_choices" required>
+        
+        <label>Answer Key (comma-separated):</label>
+        <input type="text" name="answer_key" placeholder="A,B,C,D,A..." required>
+        
+        <button type="submit">Save Settings</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upload OMR</title>
+    <style>
+        form { max-width: 400px; margin: 50px auto; text-align: center; }
+        input { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Upload OMR Sheet</h1>
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Process OMR</button>
+    </form>
+</body>
+</html>

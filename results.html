@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #4CAF50; color: white; }
+        .correct { background-color: #dff0d8; }
+        .incorrect { background-color: #f2dede; }
+        .score { text-align: center; font-size: 1.2em; margin: 20px; }
+    </style>
+</head>
+<body>
+    <div class="score">
+        Total Score: {{ score }}/{{ total }}
+    </div>
+    
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+            <th>Status</th>
+        </tr>
+        {% for item in results %}
+        <tr class="{{ 'correct' if item.Marked == item.Correct else 'incorrect' }}">
+            <td>{{ item.Question }}</td>
+            <td>{{ item.Marked }}</td>
+            <td>{{ item.Correct }}</td>
+            <td>{{ 'Correct' if item.Marked == item.Correct else 'Incorrect' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/" style="padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none;">New Scan</a>
+    </div>
+    
+</body>
+</html>
